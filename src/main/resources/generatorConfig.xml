@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD
+    MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- Change the path of mysql-connector-java to suit your environment -->
+    <classPathEntry
+            location="C:\Users\shuto-keisuke\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\8.0.23\14d64ac509adccaff444513c12646d93e4ed8be8\mysql-connector-java-8.0.23.jar"/>
+    <context id="MySQLTables" targetRuntime="MyBatis3Kotlin">
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/attendance_app"
+                userId="root"
+                password="mysql">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+        <javaModelGenerator
+                targetPackage="com.attendance.api.infrastructure.database.record"
+                targetProject="src/main/kotlin">
+        </javaModelGenerator>
+        <javaClientGenerator
+                targetPackage="com.attendance.api.infrastructure.database.mapper"
+                targetProject="src/main/kotlin">
+        </javaClientGenerator>
+        <table tableName="%">
+<!--            <columnOverride column="role_type" typeHandler="org.apache.ibatis.type.EnumTypeHandler"-->
+<!--                            javaType="com.example.springlesson.domain.enum.RoleType"/>-->
+        </table>
+    </context>
+</generatorConfiguration>
